@@ -14,7 +14,7 @@ const Listavuelo = ({sormFly}) => {
           const peticion = async ()=>{
               try{
                 const url = 'Localhost:8000.';
-                const {data} = await axios.get(`${url}/`);  
+                const {data} = await axios.get(`${url}/${sormFly}?departureAirportName=el%20dorado&arrivalAirportName=san%20luis&departureDate=23%2F02%2F2022`);  
                 setdatos(data);
               }catch(error){
                 console.log(error);
