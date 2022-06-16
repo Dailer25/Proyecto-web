@@ -3,11 +3,11 @@ import Vuelo from "./Vuelo";
 import axios from "axios";
 
 const Listavuelo = ({ statusFli}) => {
-  const vuelos = [
+  /*const vuelos = [
     { idvuelo: 146, nombre: "Caracas", ruta: "larga" },
     { idvuelo: 1156, nombre: "Caracas", ruta: "larga" },
     { idvuelo: 117, nombre: "Caracas", ruta: "larga" },
-  ];
+  ];*/
 
   const [datosApi,setdatos] = useState({});
     useEffect(()=>{
@@ -25,16 +25,19 @@ const Listavuelo = ({ statusFli}) => {
     },[]);
 
   return (
-    <div>
+    <div className="row justify-content-center">
+       <div className="col-8">
+          <h3>Select your flight</h3>
+          <Vuelo datosApi={datosApi}/>
+        
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            statusFli(true);
+          }}
+        >Regresar</button>
+      </div>
      
-         <Vuelo datosApi={datosApi}/>
-      
-       <button
-        className="btn btn-primary"
-        onClick={() => {
-          statusFli(true);
-        }}
-      >Regresar</button>
     </div>
   );
 };
