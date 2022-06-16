@@ -3,6 +3,7 @@ import Listavuelo from "./Listavuelo";
 import Header from './header';
 import {FaPlaneDeparture,FaPlaneArrival} from 'react-icons/fa';
 import {MdDateRange} from 'react-icons/md'
+
 const Forms =()=>{
 
     const [formAir,setformAir] = useState({
@@ -31,7 +32,7 @@ const Forms =()=>{
         <>
             <div className="row justify-content-center">
                 <div className="col-auto m-4">
-                    <h3>Aeroelinea Norte-Sur</h3>
+                    <h3>Airline Nort-South</h3>
                 </div>
             </div>
             {statusvuelo?<form>
@@ -58,24 +59,42 @@ const Forms =()=>{
                 </div>
                 <div className='row justify-content-center'>
                     <div className='col-4'>
-                        <button className='btn btn-block btn-danger mt-4' onClick={()=>{setstatus(false)}}>Enviar</button>
+                        <button className='btn btn-block btn-danger mt-4' onClick={()=>{setstatus(false)}}>Send</button>
                     </div>
                 </div>
             </form>
             :
-            <>
-                {
-                    
-                    cambi()
-                }
-                <Header formFly={obj}/>
-                <Listavuelo statusFli={setstatus}/>
-                {console.log(obj)}
-            </>    
-            
+                <>
+                    {  
+                        cambi()
+                    }
+                        <div className='row justify-content-center'>
+                            <div className='col-6'>
+                                <Header formFly={obj}/>
+                            </div>
+                        </div>       
+                        <div className='row justify-content-center'>
+                            <div className='col-6'>
+                                <Listavuelo sormFly={obj}/>
+                            </div>
+                        </div>
+                        <div className='row justify-content-center'>
+                            <div className='col-5'>
+                                {
+                                    <button
+                                    className="btn btn-danger"
+                                    onClick={() => {
+                                        setstatus(true);
+                                    }}
+                                    >Back</button>
+                                }
+                            </div>
+                        </div>
+                    {console.log(obj)}
+                </>    
             }
-            
         </>
     )
+    
 }
 export default Forms

@@ -1,27 +1,27 @@
 
 const style={
-    color:'green'
+    color:'black',
+    background:'#f7f2f3',
+    borderRadius:'6px',
+    font:'OpenSans',
 };
 
 const Header = ({formFly})=>{
     
     return(
         <>
-            <div className="row justify-content-center">
-                <div style={style} className="col-3">
-                    <p>From</p>
+            <div style={style} className="row justify-content-center">
+                <div  className="col-3">
+                    From<br></br>
                     {formFly.name}  
                 </div>
                 <div className="col-3">
-                    <p>To</p>
+                    To<br></br>
                     {formFly.name2}
                 </div>
                 <div className="col-3">
-                    <p>Date</p>
+                    Date<br></br>
                     {formFly.date}
-                </div>
-                <div className="col-3">
-
                 </div>
             </div>
         </>
